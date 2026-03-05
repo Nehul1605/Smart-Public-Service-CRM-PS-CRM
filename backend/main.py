@@ -151,8 +151,7 @@ async def get_token(email: str = Form(...), password: str = Form(...)):
         # but better to use an environment variable.
         api_key = os.getenv("FIREBASE_WEB_API_KEY")
         if not api_key:
-            # Fallback to the one I saw in the frontend config if not in env
-            api_key = "AIzaSyAluN8qTMuufQycTkZO9is0h657MFHqDjU" 
+            raise HTTPException(status_code=500, detail="FIREBASE_WEB_API_KEY not set in environment")
             
         import requests
         url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={api_key}"
