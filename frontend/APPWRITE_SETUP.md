@@ -30,6 +30,12 @@ Create a Database with ID: `69aae98000213ae92ae6` (as per your .env) or use the 
 | `ward` | String | 50 | No | |
 | `createdAt` | DateTime | - | Yes | |
 | `updatedAt` | DateTime | - | Yes | |
+| `reporterName`| String | 100 | No | |
+| `reporterId` | String | 100 | No | |
+| `priorityScore`| Float | - | No | |
+| `slaHours` | Integer | - | No | |
+| `slaRemainingHours`| Integer | - | No | |
+| `state` | String | 100 | No | |
 
 ### Permissions:
 - **Role: Users** -> Create

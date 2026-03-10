@@ -163,9 +163,9 @@ async def create_complaint(body: ComplaintCreate):
             "createdAt": now,
             "updatedAt": now,
             "timeline": timeline,
-            "priorityScore": priority,
-            "slaHours": sla_hours,
-            "slaRemainingHours": sla_hours,
+            "priorityScore": float(priority),
+            "slaHours": int(sla_hours),
+            "slaRemainingHours": int(sla_hours),
             "coordinates": json.dumps(body.coordinates) if body.coordinates else None,
             "photos": json.dumps(body.photos) if body.photos else "[]",
             "state": get_state_from_coords(body.coordinates["lat"], body.coordinates["lng"]) if body.coordinates else "Unknown"
